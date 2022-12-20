@@ -1,5 +1,9 @@
 package com.edu.druid;
 
+/**
+ *
+ */
+
 public class DBUtil {
     public static String fixSqlFieldValue(String value) {
         if (value == null) {

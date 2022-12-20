@@ -1,2 +1,4 @@
-package com.edu.service.academic;public interface tableName {
+package com.edu.service.academic;
+
+public interface serviceDao {
 }

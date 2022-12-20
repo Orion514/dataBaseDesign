@@ -2,7 +2,10 @@ package com.edu.dao.base;
 
 import com.edu.druid.DruidUtil;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DaoBase implements Dao {
     /**

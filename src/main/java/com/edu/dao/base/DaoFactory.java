@@ -1,10 +1,7 @@
 package com.edu.dao.base;
 
-import com.edu.dao.ScoreDao;
-import com.edu.dao.StudentDao;
-import com.edu.dao.impl.ScoreDaoImpl;
-import com.edu.dao.impl.StudentDaoImpl;
-import com.edu.pojo.Score;
+import com.edu.dao.academic.TableNameDao;
+import com.edu.dao.academic.impl.TableNameDaoImpl;
 
 public class DaoFactory {
     // 单例模式
@@ -20,9 +17,9 @@ public class DaoFactory {
     }
 
     // 工厂创建Dao对象
-    public StudentDao getStudentDao(){
-        return new StudentDaoImpl();
-    }
-    public ScoreDao getScoreDao(){return new ScoreDaoImpl(); }
+    public TableNameDao getTableNameDao(){return new TableNameDaoImpl();}
+
+    // 下面可以加更多的Dao对象,如下
+//    public ScoreDao getScoreDao(){return new ScoreDaoImpl(); }
 
 }

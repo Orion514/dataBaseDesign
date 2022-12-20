@@ -1,6 +1,10 @@
+package com.edu;
+
 import com.edu.druid.DBUtil;
-import com.edu.search.impl.StudentSearchCriteria;
+import com.edu.druid.DruidUtil;
 import org.junit.Test;
+
+import javax.sql.DataSource;
 
 public class DBUtilTest {
 
@@ -11,9 +15,9 @@ public class DBUtilTest {
     }
 
     @Test
-    public void testSearch(){
-        StudentSearchCriteria s = new StudentSearchCriteria("19",null,"男",null,null);
-        System.out.println(s.getSearchSql());
+    public void testConnect(){
+        DataSource ds =  DruidUtil.getDataSource();
+        System.out.println(ds);
     }
 
 }

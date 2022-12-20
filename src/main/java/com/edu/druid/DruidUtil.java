@@ -1,6 +1,7 @@
 package com.edu.druid;
-import com.alibaba.druid.pool.DruidDataSource;
+
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+
 import javax.sql.DataSource;
 import java.io.InputStream;
 import java.util.Properties;
