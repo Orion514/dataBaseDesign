@@ -1,8 +1,8 @@
 package com.edu.dao.base;
 
+import com.edu.dao.*;
 import com.edu.dao.academic.TableNameDao;
 import com.edu.dao.academic.impl.TableNameDaoImpl;
-import com.edu.myproject.*;
 
 public class DaoFactory {
     // 单例模式
@@ -22,9 +22,22 @@ public class DaoFactory {
 
     // 下面可以加更多的Dao对象,如下
 //    public ScoreDao getScoreDao(){return new ScoreDaoImpl(); }
-    public resultDao getResultDao(){return new resultDaoImpl();}
+    //用户Dao
+    public UserDaoImpl getUserDao(){return new UserDaoImpl();}
 
-    public auditDao getAuditDao(){return new auditDaoImpl();}
+    //用户角色Dao
+    public User_RoleDaoImpl getUser_RoleDao(){return new User_RoleDaoImpl();}
 
-    public assistant_assessmentDao getAssistant_assessmentDao(){return new assistant_assessmentDaoImpl();}
+    //导师Dao
+    public TutorDaoImpl getTutorDao(){return new TutorDaoImpl();}
+
+    //研究生Dao
+    public PostgraduateDaoImpl getPostgraduateDao(){return new PostgraduateDaoImpl();}
+
+    //项目Dao
+    public ProjectDaoImpl getProjectDao(){return new ProjectDaoImpl();}
+    //参与项目Dao
+    public ParticipateDaoImpl getParticipateDao(){return new ParticipateDaoImpl();}
+
+    public Subject_LeaderDaoImpl getSubject_LeaderDao(){return new Subject_LeaderDaoImpl();}
 }
