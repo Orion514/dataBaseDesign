@@ -23,5 +23,8 @@
 <form action="academic_exchange_select.jsp">
     <input type="submit" value="选择学术交流情况填写统计表"/>
 </form>
+<form action="assistant_stu_1.jsp">
+    <input type="submit" value="进入助教志愿选择系统">
+</form>
 </body>
 </html>

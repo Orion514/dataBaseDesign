@@ -1,8 +1,6 @@
 package com.edu.dao.base;
 
 import com.edu.dao.*;
-import com.edu.dao.academic.TableNameDao;
-import com.edu.dao.academic.impl.TableNameDaoImpl;
 import com.edu.dao.assistant.*;
 import com.edu.dao.assistant.impl.*;
 
@@ -20,7 +18,6 @@ public class DaoFactory {
     }
 
     // 工厂创建Dao对象
-    public TableNameDao getTableNameDao(){return new TableNameDaoImpl();}
 
     public AssessmentDao getAssessmentDao(){return new AssessmentDaoImpl();}
 
