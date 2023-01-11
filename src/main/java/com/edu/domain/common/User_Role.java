@@ -1,4 +1,4 @@
-package com.edu.po;
+package com.edu.domain.common;
 
 public class User_Role {
     private int user_id;

@@ -1,7 +1,7 @@
-package com.edu.dao;
+package com.edu.dao.common;
 
 
-import com.edu.po.User_Role;
+import com.edu.domain.common.User_Role;
 
 public interface User_RoleDao {
     public int selectRoleIdByUserId(int userid);

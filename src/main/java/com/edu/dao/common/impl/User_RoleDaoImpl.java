@@ -1,15 +1,15 @@
-package com.edu.dao;
+package com.edu.dao.common.impl;
 
+import com.edu.dao.common.User_RoleDao;
 import com.edu.druid.DruidUtil;
-import com.edu.po.User;
-import com.edu.po.User_Role;
+import com.edu.domain.common.User_Role;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class User_RoleDaoImpl implements User_RoleDao{
+public class User_RoleDaoImpl implements User_RoleDao {
     @Override
     public int selectRoleIdByUserId(int userid){
         Connection conn = null;

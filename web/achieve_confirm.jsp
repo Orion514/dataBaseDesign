@@ -17,6 +17,7 @@
         import="javax.servlet.http.HttpSession"
 %>
 <%@ page import="com.edu.dao.base.DaoFactory" %>
+<%@ page import="com.edu.domain.common.User" %>
 <html>
 <head>
     <title>成果认定申请</title>

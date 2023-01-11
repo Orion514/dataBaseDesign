@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-    import="com.edu.po.User"
+    import="com.edu.domain.common.User"
 %>
-<%@ page import="com.edu.po.Tutor" %>
+<%@ page import="com.edu.domain.common.Tutor" %>
 <%@ page import="com.edu.dao.base.DaoFactory" %>
 <%@ page import="com.edu.domain.project.Project" %>
 <%@ page import="java.util.List" %>

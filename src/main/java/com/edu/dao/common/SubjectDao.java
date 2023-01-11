@@ -1,6 +1,6 @@
-package com.edu.dao;
+package com.edu.dao.common;
 
-import com.edu.po.Subject;
+import com.edu.domain.common.Subject;
 
 import java.util.List;
 

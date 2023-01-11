@@ -11,6 +11,7 @@
 <%@ page import="com.edu.po.*" %>
 <%@ page import="com.edu.dao.achievement.impl.*" %>
 <%@ page import="com.edu.domain.achievement.*" %>
+<%@ page import="com.edu.domain.common.User" %>
 <html>
 <head>
     <title>学生成果认证</title>

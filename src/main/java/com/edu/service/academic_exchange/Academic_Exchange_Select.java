@@ -1,10 +1,10 @@
 package com.edu.service.academic_exchange;
 
-import com.edu.dao.PostgraduateDaoImpl;
+import com.edu.dao.common.impl.PostgraduateDaoImpl;
 import com.edu.domain.academic.Academic_Exchange;
 import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
-import com.edu.po.Postgraduate;
-import com.edu.po.User;
+import com.edu.domain.common.Postgraduate;
+import com.edu.domain.common.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

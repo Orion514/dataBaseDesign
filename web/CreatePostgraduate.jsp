@@ -1,4 +1,4 @@
-<%@ page import="com.edu.po.Tutor" %>
+<%@ page import="com.edu.domain.common.Tutor" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.edu.dao.base.DaoFactory" %><%--
   Created by IntelliJ IDEA.

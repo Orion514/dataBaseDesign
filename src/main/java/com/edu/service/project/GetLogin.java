@@ -1,7 +1,7 @@
 package com.edu.service.project;
 
 import com.edu.dao.base.DaoFactory;
-import com.edu.po.User;
+import com.edu.domain.common.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -1,9 +1,9 @@
 package com.edu.dao.base;
 
-import com.edu.dao.*;
 import com.edu.dao.achievement.impl.*;
 import com.edu.dao.assistant.*;
 import com.edu.dao.assistant.impl.*;
+import com.edu.dao.common.impl.*;
 import com.edu.dao.project.impl.ParticipateDaoImpl;
 import com.edu.dao.project.impl.ProjectDaoImpl;
 

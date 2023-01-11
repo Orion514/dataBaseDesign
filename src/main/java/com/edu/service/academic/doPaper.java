@@ -2,7 +2,7 @@ package com.edu.service.academic;
 
 import com.edu.dao.achievement.impl.PaperDaoImpl;
 import com.edu.domain.achievement.Paper;
-import com.edu.po.User;
+import com.edu.domain.common.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

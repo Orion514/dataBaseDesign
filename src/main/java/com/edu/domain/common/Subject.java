@@ -1,4 +1,4 @@
-package com.edu.po;
+package com.edu.domain.common;
 
 public class Subject {
     private String id;

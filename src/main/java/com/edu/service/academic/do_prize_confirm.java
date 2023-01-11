@@ -2,7 +2,7 @@ package com.edu.service.academic;
 
 import com.edu.dao.achievement.impl.PrizeDaoImpl;
 import com.edu.domain.achievement.Prize;
-import com.edu.po.User;
+import com.edu.domain.common.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;

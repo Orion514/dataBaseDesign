@@ -1,8 +1,9 @@
-package com.edu.dao;
+package com.edu.dao.common.impl;
 
+import com.edu.dao.common.TutorDao;
 import com.edu.druid.DruidUtil;
 
-import com.edu.po.Tutor;
+import com.edu.domain.common.Tutor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TutorDaoImpl implements TutorDao{
+public class TutorDaoImpl implements TutorDao {
     @Override
     public Tutor selectTutorByUserId(int user_id){
         Connection conn = null;

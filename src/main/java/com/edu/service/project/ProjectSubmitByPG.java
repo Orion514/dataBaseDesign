@@ -2,8 +2,8 @@ package com.edu.service.project;
 
 import com.edu.dao.base.DaoFactory;
 import com.edu.domain.project.Participate;
-import com.edu.po.Postgraduate;
-import com.edu.po.User;
+import com.edu.domain.common.Postgraduate;
+import com.edu.domain.common.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

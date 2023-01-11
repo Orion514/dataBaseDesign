@@ -1,5 +1,5 @@
-package com.edu.dao;
-import com.edu.po.User;
+package com.edu.dao.common;
+import com.edu.domain.common.User;
 public interface UserDao {
     public User selectUserByAccount(String account);
 

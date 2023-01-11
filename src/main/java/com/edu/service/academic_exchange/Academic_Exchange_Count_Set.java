@@ -1,7 +1,8 @@
 package com.edu.service.academic_exchange;
 
 import com.edu.dao.base.DaoFactory;
-import com.edu.po.*;
+import com.edu.domain.common.Subject_Leader;
+import com.edu.domain.common.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

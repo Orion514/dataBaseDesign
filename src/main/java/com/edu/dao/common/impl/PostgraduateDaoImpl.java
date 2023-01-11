@@ -1,8 +1,8 @@
-package com.edu.dao;
+package com.edu.dao.common.impl;
 
+import com.edu.dao.common.PostgraduateDao;
 import com.edu.druid.DruidUtil;
-import com.edu.po.Postgraduate;
-import com.edu.po.Tutor;
+import com.edu.domain.common.Postgraduate;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostgraduateDaoImpl implements PostgraduateDao{
+public class PostgraduateDaoImpl implements PostgraduateDao {
     @Override
     public List<Postgraduate> selectPostgraduateByTutorId(String tutor_id){
         Connection conn = null;

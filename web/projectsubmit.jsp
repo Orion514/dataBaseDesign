@@ -1,5 +1,5 @@
-<%@ page import="com.edu.po.User" %>
-<%@ page import="com.edu.po.Postgraduate" %>
+<%@ page import="com.edu.domain.common.User" %>
+<%@ page import="com.edu.domain.common.Postgraduate" %>
 <%@ page import="com.edu.dao.base.DaoFactory" %>
 <%@ page import="com.edu.domain.project.Participate" %><%--
   Created by IntelliJ IDEA.

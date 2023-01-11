@@ -1,7 +1,7 @@
-package com.edu.dao;
+package com.edu.dao.common.impl;
 
-import com.edu.po.Subject;
-import com.edu.dao.SubjectDao;
+import com.edu.domain.common.Subject;
+import com.edu.dao.common.SubjectDao;
 import com.edu.dao.base.DaoBase;
 
 import java.sql.Connection;

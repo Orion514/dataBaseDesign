@@ -10,6 +10,13 @@
     import="javax.servlet.http.HttpSession"
 %>
 <%@ page import="com.edu.domain.academic.Academic_Exchange" %>
+<%@ page import="com.edu.dao.common.impl.PostgraduateDaoImpl" %>
+<%@ page import="com.edu.dao.common.impl.Subject_LeaderDaoImpl" %>
+<%@ page import="com.edu.dao.common.impl.SubjectDaoImpl" %>
+<%@ page import="com.edu.domain.common.Postgraduate" %>
+<%@ page import="com.edu.domain.common.Subject" %>
+<%@ page import="com.edu.domain.common.Subject_Leader" %>
+<%@ page import="com.edu.domain.common.User" %>
 <html>
   <head>
     <title>研究生学术交流情况认定</title>

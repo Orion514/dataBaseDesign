@@ -1,14 +1,15 @@
-package com.edu.dao;
+package com.edu.dao.common.impl;
 
+import com.edu.dao.common.UserDao;
 import com.edu.druid.DruidUtil;
-import com.edu.po.User;
+import com.edu.domain.common.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
 
     @Override
     public User selectUserByAccount(String account){

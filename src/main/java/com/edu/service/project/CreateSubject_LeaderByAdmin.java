@@ -1,10 +1,9 @@
 package com.edu.service.project;
 
 import com.edu.dao.base.DaoFactory;
-import com.edu.po.Subject_Leader;
-import com.edu.po.Tutor;
-import com.edu.po.User;
-import com.edu.po.User_Role;
+import com.edu.domain.common.Subject_Leader;
+import com.edu.domain.common.User;
+import com.edu.domain.common.User_Role;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
