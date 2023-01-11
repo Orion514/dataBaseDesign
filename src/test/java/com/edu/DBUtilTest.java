@@ -1,10 +1,12 @@
 package com.edu;
 
+import com.edu.po.Academic_Exchange;
+import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
 import com.edu.druid.DBUtil;
-import com.edu.druid.DruidUtil;
 import org.junit.Test;
 
-import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.List;
 
 public class DBUtilTest {
 
@@ -15,9 +17,14 @@ public class DBUtilTest {
     }
 
     @Test
-    public void testConnect(){
-        DataSource ds =  DruidUtil.getDataSource();
-        System.out.println(ds);
+    public void testConnect() throws SQLException {
+        /*DataSource ds =  DruidUtil.getDataSource();
+        System.out.println(ds);*/
+        Academic_ExchangeDaoImpl academic_exchangeDao=new Academic_ExchangeDaoImpl();
+        List<Academic_Exchange> list=academic_exchangeDao.selectAcademic_Exchange();
+        for(Academic_Exchange l:list){
+            System.out.println(l.getActivity_name());
+        }
     }
     //
 
