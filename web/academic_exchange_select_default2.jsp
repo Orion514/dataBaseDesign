@@ -9,6 +9,7 @@
     import="javax.servlet.http.HttpServletRequest"
     import="javax.servlet.http.HttpSession"
 %>
+<%@ page import="com.edu.domain.academic.Academic_Exchange" %>
 <html>
   <head>
     <title>研究生学术交流情况认定</title>

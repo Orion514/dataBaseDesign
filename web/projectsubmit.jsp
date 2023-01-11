@@ -1,7 +1,7 @@
 <%@ page import="com.edu.po.User" %>
 <%@ page import="com.edu.po.Postgraduate" %>
 <%@ page import="com.edu.dao.base.DaoFactory" %>
-<%@ page import="com.edu.po.Participate" %><%--
+<%@ page import="com.edu.domain.project.Participate" %><%--
   Created by IntelliJ IDEA.
   User: 2020
   Date: 2023/1/9

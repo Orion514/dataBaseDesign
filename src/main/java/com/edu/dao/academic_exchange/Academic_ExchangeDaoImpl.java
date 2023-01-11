@@ -1,7 +1,6 @@
 package com.edu.dao.academic_exchange;
 
-import com.edu.po.Academic_Exchange;
-import com.edu.dao.academic_exchange.Academic_ExchangeDao;
+import com.edu.domain.academic.Academic_Exchange;
 import com.edu.dao.base.DaoBase;
 
 import java.sql.*;

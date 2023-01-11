@@ -9,6 +9,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.edu.dao.*" %>
 <%@ page import="com.edu.po.*" %>
+<%@ page import="com.edu.dao.achievement.impl.*" %>
+<%@ page import="com.edu.domain.achievement.*" %>
 <html>
 <head>
     <title>学生成果认证</title>

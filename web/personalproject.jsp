@@ -3,7 +3,7 @@
 %>
 <%@ page import="com.edu.po.Tutor" %>
 <%@ page import="com.edu.dao.base.DaoFactory" %>
-<%@ page import="com.edu.po.Project" %>
+<%@ page import="com.edu.domain.project.Project" %>
 <%@ page import="java.util.List" %>
 <html>
 <head>

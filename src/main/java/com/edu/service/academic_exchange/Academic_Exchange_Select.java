@@ -1,7 +1,7 @@
 package com.edu.service.academic_exchange;
 
 import com.edu.dao.PostgraduateDaoImpl;
-import com.edu.po.Academic_Exchange;
+import com.edu.domain.academic.Academic_Exchange;
 import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
 import com.edu.po.Postgraduate;
 import com.edu.po.User;

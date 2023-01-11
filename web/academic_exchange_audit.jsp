@@ -9,6 +9,7 @@
     import="java.text.SimpleDateFormat"
 
 %>
+<%@ page import="com.edu.domain.academic.Academic_Exchange" %>
 <html>
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

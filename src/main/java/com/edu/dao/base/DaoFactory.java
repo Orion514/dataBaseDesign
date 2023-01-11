@@ -1,10 +1,11 @@
 package com.edu.dao.base;
 
 import com.edu.dao.*;
-import com.edu.po.Paper;
-import com.edu.po.Standard;
+import com.edu.dao.achievement.impl.*;
 import com.edu.dao.assistant.*;
 import com.edu.dao.assistant.impl.*;
+import com.edu.dao.project.impl.ParticipateDaoImpl;
+import com.edu.dao.project.impl.ProjectDaoImpl;
 
 public class DaoFactory {
     // 单例模式

@@ -1,9 +1,7 @@
 package com.edu.service.academic;
 
-import com.edu.dao.PrizeDaoImpl;
-import com.edu.dao.ReportDaoImpl;
-import com.edu.po.Prize;
-import com.edu.po.Report;
+import com.edu.dao.achievement.impl.ReportDaoImpl;
+import com.edu.domain.achievement.Report;
 import com.edu.po.User;
 
 import javax.servlet.RequestDispatcher;

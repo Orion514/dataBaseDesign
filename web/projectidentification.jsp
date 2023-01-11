@@ -1,6 +1,8 @@
 <%@ page import="com.edu.dao.base.DaoFactory" %>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="com.edu.po.*" %><%--
+<%@ page import="com.edu.po.*" %>
+<%@ page import="com.edu.domain.project.Participate" %>
+<%@ page import="com.edu.domain.project.Project" %><%--
   Created by IntelliJ IDEA.
   User: 2020
   Date: 2023/1/9

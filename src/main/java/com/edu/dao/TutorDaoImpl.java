@@ -2,7 +2,6 @@ package com.edu.dao;
 
 import com.edu.druid.DruidUtil;
 
-import com.edu.po.Participate;
 import com.edu.po.Tutor;
 
 import java.sql.Connection;
