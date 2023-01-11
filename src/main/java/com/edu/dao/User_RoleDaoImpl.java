@@ -2,6 +2,7 @@ package com.edu.dao;
 
 import com.edu.druid.DruidUtil;
 import com.edu.po.User;
+import com.edu.po.User_Role;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,5 +32,21 @@ public class User_RoleDaoImpl implements User_RoleDao{
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public void addUser_Role(User_Role ur){
+        Connection conn = null;
+        try {
+            conn = DruidUtil.getDataSource().getConnection();
+            String insertsql="insert into user_role (user_id,role_id) values(?,?)";
+            PreparedStatement ps = conn.prepareStatement(insertsql);
+            ps.setInt(1 , ur.getUser_id());
+            ps.setInt(2,ur.getRole_id());
+            ps.executeUpdate();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

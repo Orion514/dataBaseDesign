@@ -37,4 +37,20 @@ public class UserDaoImpl implements UserDao{
 
     }
 
+    public void addUser(User user){
+        Connection conn = null;
+        try {
+            conn = DruidUtil.getDataSource().getConnection();
+            String insertsql="insert into myuser (id,account,password) values(?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(insertsql);
+            ps.setInt(1 , user.getId());
+            ps.setString(2,user.getAccount());
+            ps.setString(3,user.getPassword());
+            ps.executeUpdate();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

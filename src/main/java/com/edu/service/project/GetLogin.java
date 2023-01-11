@@ -1,4 +1,4 @@
-package com.edu.service.academic;
+package com.edu.service.project;
 
 import com.edu.dao.base.DaoFactory;
 import com.edu.po.User;
@@ -33,7 +33,7 @@ public class GetLogin extends HttpServlet {
                 forwardUrl="postgraduate_index.jsp";
             }
             else if(role_id==3){
-                forwardUrl="xxx";
+                forwardUrl="subject_leader_index.jsp";
             }
             else if(role_id==4){
                 forwardUrl="xxx";

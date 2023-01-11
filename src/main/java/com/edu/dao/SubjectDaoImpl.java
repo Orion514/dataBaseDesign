@@ -11,6 +11,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class SubjectDaoImpl extends DaoBase implements SubjectDao {
+    private static final String update_sql1="";
+    private static final String update_sql2="update subject set academic_exchange_count=? where " +
+            "id=?";
+    private static final String update_sql3="";
+
     private static final String select_sql1="select * from subject";
     private static final String select_sql2="select * from subject where " +
             "id=?";
@@ -25,9 +30,28 @@ public class SubjectDaoImpl extends DaoBase implements SubjectDao {
     }
 
     @Override
-    public void updateSubject() {
+    public void updateSubjectBysubject_Id1(String project_funds, String id) {
 
     }
+
+    @Override
+    public void updateSubjectBysubject_Id2(int academic_exchange_count, String id) {
+        try {
+            Connection connection=getConnection();
+            PreparedStatement preparedStatement= connection.prepareStatement(update_sql2);
+            preparedStatement.setInt(1,academic_exchange_count);
+            preparedStatement.setString(2,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void updateSubjectBysubject_Id3(int aspiration_count, String id) {
+
+    }
+
 
     @Override
     public List<Subject> selectallSubject() {

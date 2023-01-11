@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 2020
-  Date: 2023/1/9
-  Time: 13:07
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,6 +7,18 @@
 <body>
 <form action="addproject.jsp">
     <input type="submit" value="新建项目"/>
+</form>
+
+<form action="CreateTutor.jsp">
+    <input type="submit" value="创建导师"/>
+</form>
+
+<form action="CreatePostgraduate.jsp">
+    <input type="submit" value="创建研究生">
+</form>
+
+<form action="CreateSubject_Leader.jsp">
+    <input type="submit" value="创建学科负责人">
 </form>
 </body>
 </html>

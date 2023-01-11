@@ -50,4 +50,5 @@ public class DaoFactory {
     public ParticipateDaoImpl getParticipateDao(){return new ParticipateDaoImpl();}
 
     public Subject_LeaderDaoImpl getSubject_LeaderDao(){return new Subject_LeaderDaoImpl();}
+    public SubjectDaoImpl getSubjectDao(){return new SubjectDaoImpl();}
 }
