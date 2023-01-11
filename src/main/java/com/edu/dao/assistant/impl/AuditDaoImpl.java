@@ -1,16 +1,16 @@
 package com.edu.dao.assistant.impl;
 
-import com.edu.dao.assistant.auditDao;
+import com.edu.dao.assistant.AuditDao;
 import com.edu.druid.DruidUtil;
-import com.edu.domain.assistant.audit;
+import com.edu.domain.assistant.Audit;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class auditDaoImpl implements auditDao {
+public class AuditDaoImpl implements AuditDao {
     @Override
-    public void addAudit(audit au) {
+    public void addAudit(Audit au) {
         Connection con = null;
         try{
             con = DruidUtil.getDataSource().getConnection();
@@ -19,7 +19,7 @@ public class auditDaoImpl implements auditDao {
             PreparedStatement psmt = con.prepareStatement(add_sql);
             psmt.setInt(1,au.getId());
             psmt.setString(2, au.getSno_id());
-            psmt.setInt(3,au.getCid());
+            psmt.setString(3,au.getCid());
             psmt.setString(4,au.getAudit_state());
             psmt.setInt(5,au.getChoice());
             psmt.executeUpdate();
@@ -40,7 +40,7 @@ public class auditDaoImpl implements auditDao {
 
 
     @Override
-    public void selectAudit(audit au) {
+    public void selectAudit(Audit au) {
         Connection con = null;
         //查询结果返回
         ResultSet resSet = null;
@@ -75,7 +75,7 @@ public class auditDaoImpl implements auditDao {
     }
 
     @Override
-    public void updateAudit(audit au) {
+    public void updateAudit(Audit au) {
         Connection con = null;
         try{
             con = DruidUtil.getDataSource().getConnection();

@@ -19,7 +19,10 @@ public class AssessmentServiceTest {
         java.util.Date d = new java.util.Date();
         Date sqlD = new Date(d.getTime());
 
-        AssessmentView assessmentView = new AssessmentView("周六", 1,"Y0000003","专业概述",68,"工学","必修","本科生","赵东","2023年第二学期","工作自述",sqlD,null,null,null);
+        AssessmentView assessmentView = new AssessmentView("Y0000003","赵四","C1345672",
+                "专业概述",2,44,"工学","必修",
+                "本科生","赵东","2023年第二学期","助教工作",sqlD,
+                null,null,null);
         int res = assessmentService.addOne(assessmentView);
         System.out.println(res);
     }

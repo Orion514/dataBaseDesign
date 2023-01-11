@@ -34,6 +34,7 @@
 <%
     CourseTeacherDao ctDao = new CourseTeacherDaoImpl();
     List<CourseTeacherView> list = ctDao.getCourseTeacherAll();
+
     String s="";
     for(CourseTeacherView l:list){
         s+="<tr align=\"center\">";

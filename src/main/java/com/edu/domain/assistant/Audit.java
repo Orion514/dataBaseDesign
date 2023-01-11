@@ -1,9 +1,9 @@
 package com.edu.domain.assistant;
 
-public class audit {
+public class Audit {
     private int id;
     private String sno_id;
-    private int cid;
+    private String cid;
     private String audit_state;
     private int choice;
 
@@ -23,11 +23,11 @@ public class audit {
         this.sno_id = sno_id;
     }
 
-    public int getCid() {
+    public String getCid() {
         return cid;
     }
 
-    public void setCid(int cid) {
+    public void setCid(String cid) {
         this.cid = cid;
     }
 

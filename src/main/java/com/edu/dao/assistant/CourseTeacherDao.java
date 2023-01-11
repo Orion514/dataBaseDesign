@@ -9,4 +9,6 @@ public interface CourseTeacherDao {
     public List<String> selectCidByTid(String tid);
 
     public List<CourseTeacherView> getCourseTeacherAll();
+
+    public CourseTeacherView selectViewById(int id);
 }

@@ -61,6 +61,7 @@ public class AssessmentDaoImpl extends DaoBase implements AssessmentDao {
             while(rs.next()){
                 AssessmentView assessmentView = new AssessmentView();
                 assessmentView.setStudent_id(rs.getString("sno"));
+                assessmentView.setCourse_id(rs.getString("course_id"));
                 assessmentView.setStudent_name(rs.getString("sname"));
                 assessmentView.setCourse_name(rs.getString("course_name"));
                 assessmentView.setCourse_student_num(rs.getInt("teach_student_num"));

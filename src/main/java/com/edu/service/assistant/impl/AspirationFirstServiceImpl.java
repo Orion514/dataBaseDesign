@@ -1,9 +1,15 @@
 package com.edu.service.assistant.impl;
 
 import com.edu.dao.assistant.*;
+import com.edu.dao.base.Dao;
 import com.edu.dao.base.DaoFactory;
+import com.edu.dao.common.impl.PostgraduateDaoImpl;
 import com.edu.domain.assistant.Assessment;
+import com.edu.domain.assistant.Audit;
+import com.edu.domain.assistant.CourseTeacherView;
 import com.edu.domain.assistant.vo.AssessmentView;
+import com.edu.domain.common.Postgraduate;
+import com.edu.domain.common.User;
 import com.edu.service.assistant.AssessmentService;
 
 import javax.servlet.ServletException;
@@ -25,6 +31,8 @@ public class AspirationFirstServiceImpl extends HttpServlet implements Assessmen
     TeacherDao teacherDao = DaoFactory.getInstance().getTeacherDao();
     CourseDao courseDao = DaoFactory.getInstance().getCourseDao();
     StudentDao studentDao = DaoFactory.getInstance().getStudentDao();
+
+    AuditDao auditDao = DaoFactory.getInstance().getAuditDao();
 
     AssessmentDao assessmentDao = DaoFactory.getInstance().getAssessmentDao();
 
@@ -57,17 +65,24 @@ public class AspirationFirstServiceImpl extends HttpServlet implements Assessmen
         response.setContentType("text/html");
         String selectId = request.getParameter("selectId");
 
-        AssessmentView assessmentView = assessmentDao.selectById(Integer.parseInt(selectId));
-        Assessment assessment = new Assessment();
-        assessment.setSno_id(assessmentView.getStudent_id());
-        assessment.setCourse_teacher_id(assessmentView.getCourse_teacher_id());
-        assessment.setWork_statement(assessmentView.getWork_statement());
-        assessment.setStatement_time(assessmentView.getStatement_time());
-        assessment.setTeachar_appraise(assessmentView.getAppraise());
-        assessment.setAppraise_time(assessmentView.getAppraise_time());
-        assessment.setAppraise_result(assessmentView.getAppraise_result());
+        CourseTeacherView courseTeacherView = courseTeacherDao.selectViewById(Integer.parseInt(selectId));
 
-        assessmentDao.addOne(assessment);
+        // 得到当前研究生的学号
+        User user=(User)request.getSession().getAttribute("userbean");
+        int user_id=user.getId();
+        PostgraduateDaoImpl pd=new PostgraduateDaoImpl();
+        Postgraduate student=pd.selectPostgraduateByUserId(user_id);
+        String student_id=student.getId();
+
+
+        Audit audit = new Audit();
+        audit.setId(auditDao.selectAllAudit() + 1);
+        audit.setSno_id(student_id);
+        audit.setCid(courseTeacherView.getCourse_id());
+        audit.setAudit_state("待审核");
+        audit.setChoice(1);
+
+        auditDao.addAudit(audit);
 
         String forwardURL = "assistant_stu_2.jsp";
         request.getRequestDispatcher(forwardURL).forward(request,response);

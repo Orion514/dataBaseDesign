@@ -1,17 +1,17 @@
 package com.edu.dao.assistant.impl;
 
-import com.edu.dao.assistant.resultDao;
+import com.edu.dao.assistant.ResultDao;
 import com.edu.druid.DruidUtil;
-import com.edu.domain.assistant.result;
+import com.edu.domain.assistant.Result;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class resultDaoImpl implements resultDao {
+public class ResultDaoImpl implements ResultDao {
 
 
     @Override
-    public void addResult(result re) {
+    public void addResult(Result re) {
         Connection con = null;
         try{
             con = DruidUtil.getDataSource().getConnection();
@@ -33,7 +33,7 @@ public class resultDaoImpl implements resultDao {
     }
 
     @Override
-    public void updateResult(result re) {
+    public void updateResult(Result re) {
 
 
     }

@@ -32,6 +32,8 @@ public class DaoFactory {
 
     public StudentDao getStudentDao(){return new StudentDaoImpl();}
 
+    public AuditDao getAuditDao(){return new AuditDaoImpl();}
+
 
     // 下面可以加更多的Dao对象,如下
 //    public ScoreDao getScoreDao(){return new ScoreDaoImpl(); }

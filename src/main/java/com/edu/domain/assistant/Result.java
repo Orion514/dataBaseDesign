@@ -1,6 +1,6 @@
 package com.edu.domain.assistant;
 
-public class result {
+public class Result {
     private String sno_id;
     private int cid;
 

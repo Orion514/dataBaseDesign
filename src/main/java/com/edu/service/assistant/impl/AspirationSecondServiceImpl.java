@@ -1,9 +1,11 @@
 package com.edu.service.assistant.impl;
 
 import com.edu.dao.assistant.AssessmentDao;
+import com.edu.dao.assistant.AuditDao;
 import com.edu.dao.assistant.CourseDao;
 import com.edu.dao.base.DaoFactory;
 import com.edu.domain.assistant.Assessment;
+import com.edu.domain.assistant.Audit;
 import com.edu.domain.assistant.vo.AssessmentView;
 
 import javax.servlet.ServletException;
@@ -19,22 +21,21 @@ import java.io.IOException;
 @WebServlet("/assistant_stu_2")
 public class AspirationSecondServiceImpl extends HttpServlet {
     AssessmentDao assessmentDao = DaoFactory.getInstance().getAssessmentDao();
+    AuditDao auditDao = DaoFactory.getInstance().getAuditDao();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String selectId = request.getParameter("selectId");
 
         AssessmentView assessmentView = assessmentDao.selectById(Integer.parseInt(selectId));
-        Assessment assessment = new Assessment();
-        assessment.setSno_id(assessmentView.getStudent_id());
-        assessment.setCourse_teacher_id(assessmentView.getCourse_teacher_id());
-        assessment.setWork_statement(assessmentView.getWork_statement());
-        assessment.setStatement_time(assessmentView.getStatement_time());
-        assessment.setTeachar_appraise(assessmentView.getAppraise());
-        assessment.setAppraise_time(assessmentView.getAppraise_time());
-        assessment.setAppraise_result(assessmentView.getAppraise_result());
+        Audit audit = new Audit();
+        audit.setId(auditDao.selectAllAudit() + 1);
+        audit.setSno_id(assessmentView.getStudent_id());
+        audit.setCid(assessmentView.getCourse_id());
+        audit.setAudit_state("待审核");
+        audit.setChoice(2);
 
-        assessmentDao.addOne(assessment);
+        auditDao.addAudit(audit);
 
         String forwardURL = "postgraduate_index.jsp";
         request.getRequestDispatcher(forwardURL).forward(request,response);
