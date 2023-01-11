@@ -7,6 +7,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="dataBaseDesign" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="sqljdbc4" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.8" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
+        </element>
       </element>
     </root>
   </artifact>
