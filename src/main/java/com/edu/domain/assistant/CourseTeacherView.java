@@ -4,27 +4,29 @@ package com.edu.domain.assistant;
  * CourseTeacherView : 课程教师视图类
  */
 public class CourseTeacherView {
-    public int id;
-    public String course_name;
-    public String course_property;
-    public String course_subject_id;
-    public String course_subject_name;
-    public int course_hour;
-    public String course_teach_object;
-    public String teacher_id;
-    public String teacher_name;
-    public String teacher_user_id;
-    public String teach_time;
-    public int teach_student_num;
+    private int id;
+    private String course_id;
+    private String course_name;
+    private String course_property;
+    private String course_subject_id;
+    private String course_subject_name;
+    private int course_hour;
+    private String course_teach_object;
+    private String teacher_id;
+    private String teacher_name;
+    private String teacher_user_id;
+    private String teach_time;
+    private int teach_student_num;
 
 
     public CourseTeacherView() {
     }
 
-    public CourseTeacherView(int id, String course_name, String course_property, String course_subject_id, String course_subject_name,
+    public CourseTeacherView(int id, String course_id, String course_name, String course_property, String course_subject_id, String course_subject_name,
                              int course_hour, String course_teach_object, String teacher_id, String teacher_name, String teacher_user_id,
                              String teach_time, int teach_student_num) {
         this.id = id;
+        this.course_id = course_id;
         this.course_name = course_name;
         this.course_property = course_property;
         this.course_subject_id = course_subject_id;
@@ -38,10 +40,12 @@ public class CourseTeacherView {
         this.teach_student_num = teach_student_num;
     }
 
+
     @Override
     public String toString() {
         return "CourseTeacherView{" +
                 "id=" + id +
+                ", course_id='" + course_id + '\'' +
                 ", course_name='" + course_name + '\'' +
                 ", course_property='" + course_property + '\'' +
                 ", course_subject_id='" + course_subject_id + '\'' +
@@ -54,6 +58,14 @@ public class CourseTeacherView {
                 ", teach_time='" + teach_time + '\'' +
                 ", teach_student_num=" + teach_student_num +
                 '}';
+    }
+
+    public String getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
     }
 
     public int getId() {

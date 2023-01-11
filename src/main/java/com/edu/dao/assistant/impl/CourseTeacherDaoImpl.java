@@ -2,6 +2,8 @@ package com.edu.dao.assistant.impl;
 
 import com.edu.dao.assistant.CourseTeacherDao;
 import com.edu.dao.base.DaoBase;
+import com.edu.domain.assistant.CourseTeacherView;
+import com.edu.domain.assistant.vo.AssessmentView;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,6 +56,38 @@ public class CourseTeacherDaoImpl extends DaoBase implements CourseTeacherDao {
             while(rs.next()){
                 String cid = rs.getString("course_id");
                 res.add(cid);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+
+    private static final String selectCourseTeacherView = "select * from view_course_teacher";
+
+    @Override
+    public List<CourseTeacherView> getCourseTeacherAll() {
+        List<CourseTeacherView> res = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement psmt = null;
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(selectCourseTeacherView);
+
+            ResultSet rs = psmt.executeQuery();
+            while(rs.next()){
+                CourseTeacherView courseTeacherView = new CourseTeacherView();
+                courseTeacherView.setId(rs.getInt("id"));
+                courseTeacherView.setCourse_name(rs.getString("course_name"));
+                courseTeacherView.setCourse_property(rs.getString("course_property"));
+                courseTeacherView.setCourse_hour(rs.getInt("course_hour"));
+                courseTeacherView.setCourse_teach_object(rs.getString("course_teach_object"));
+                courseTeacherView.setTeacher_name(rs.getString("teacher_name"));
+                courseTeacherView.setTeach_student_num(rs.getInt("teach_student_num"));
+
+                res.add(courseTeacherView);
             }
         } catch (Exception e){
             e.printStackTrace();
