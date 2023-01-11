@@ -1,8 +1,6 @@
 package com.edu.dao.base;
 
 import com.edu.dao.*;
-import com.edu.dao.academic.TableNameDao;
-import com.edu.dao.academic.impl.TableNameDaoImpl;
 import com.edu.po.Paper;
 import com.edu.po.Standard;
 import com.edu.dao.assistant.*;
