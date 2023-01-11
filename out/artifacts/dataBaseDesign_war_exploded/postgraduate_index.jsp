@@ -25,6 +25,12 @@
 </form>
 <form action="assistant_stu_1.jsp">
     <input type="submit" value="进入助教志愿选择系统">
+
+<form action="achieve_display.jsp">
+    <input type="submit" value="成果认定情况">
+</form>
+<form action="achieve_confirm.jsp">
+    <input type="submit" value="填写成果认定">
 </form>
 </body>
 </html>

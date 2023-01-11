@@ -29,7 +29,7 @@ public class GetLogin extends HttpServlet {
             if(role_id==1){
                 forwardUrl="admin_index.jsp";
             }
-            else if(role_id==2 || role_id == 6){
+            else if(role_id==2||role_id==6){
                 forwardUrl="postgraduate_index.jsp";
             }
             else if(role_id==3){

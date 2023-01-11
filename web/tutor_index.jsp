@@ -16,5 +16,8 @@
 <form action="academic_exchange_audit.jsp" >
     <input type="submit" value="审核研究生学术交流情况"/>
 </form>
+<form action="tutor_confirm.jsp" >
+    <input type="submit" value="查看/修改学生成果认证"/>
+</form>
 </body>
 </html>

@@ -74,7 +74,8 @@
             String strDate4 = sdf4.format(l.getTime());
             s+="<td>"+strDate4+"</td>";
             s+="<td>"+l.getReport_name()+"</td>";
-            s+="<td>"+l.getImage()+"</td>";
+            String src="image/"+l.getImage();
+            s+="<td><img src=\""+src+"\"width=\"100\" height=\"100\"></td>";
             s+="<td>"+l.getNotes()+"</td>";
             s+="<td>"+"<input type=\"checkbox\" name=\"selected_academic_exchange\" value="+l.getNo()+">"+"</td>";
             s+="</tr>";

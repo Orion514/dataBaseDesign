@@ -1,6 +1,10 @@
 package com.edu.dao.base;
 
 import com.edu.dao.*;
+import com.edu.dao.academic.TableNameDao;
+import com.edu.dao.academic.impl.TableNameDaoImpl;
+import com.edu.po.Paper;
+import com.edu.po.Standard;
 import com.edu.dao.assistant.*;
 import com.edu.dao.assistant.impl.*;
 
@@ -51,4 +55,11 @@ public class DaoFactory {
 
     public Subject_LeaderDaoImpl getSubject_LeaderDao(){return new Subject_LeaderDaoImpl();}
     public SubjectDaoImpl getSubjectDao(){return new SubjectDaoImpl();}
+    public PaperDaoImpl getPaperDao(){return new PaperDaoImpl();}
+    public PrizeDaoImpl getPrizeDao(){return new PrizeDaoImpl();}
+    public StandardDaoImpl getStandardDao(){return new StandardDaoImpl();}
+    public ReportDaoImpl getReportDao(){return new ReportDaoImpl();}
+    public PatentDaoImpl getPatentDao(){return new PatentDaoImpl();}
+    public PlatformDaoImpl getPlatformDao(){return new PlatformDaoImpl();}
+    public TextbookDaoImpl getTextbookDao(){return new TextbookDaoImpl();}
 }
