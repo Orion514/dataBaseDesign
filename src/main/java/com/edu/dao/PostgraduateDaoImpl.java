@@ -1,8 +1,8 @@
 package com.edu.dao;
 
-import com.edu.dao.PostgraduateDao;
 import com.edu.druid.DruidUtil;
-
+import com.edu.po.Postgraduate;
+import com.edu.po.Tutor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,9 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.edu.po.Postgraduate;
 
-public class PostgraduateDaoImpl implements PostgraduateDao {
+public class PostgraduateDaoImpl implements PostgraduateDao{
     @Override
     public List<Postgraduate> selectPostgraduateByTutorId(String tutor_id){
         Connection conn = null;
@@ -95,6 +94,25 @@ public class PostgraduateDaoImpl implements PostgraduateDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void addPostgraduate(Postgraduate pg){
+        Connection conn = null;
+        try {
+            conn = DruidUtil.getDataSource().getConnection();
+            String insertsql="insert into postgraduate (id,name,pgtype,tutor_id,user_id) values(?,?,?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(insertsql);
+            ps.setString(1 , pg.getId());
+            ps.setString(2,pg.getName());
+            ps.setString(3,pg.getIdentity());
+            ps.setString(4,pg.getTutor_id());
+            ps.setInt(5,pg.getUser_id());
+            ps.executeUpdate();
+            ps.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

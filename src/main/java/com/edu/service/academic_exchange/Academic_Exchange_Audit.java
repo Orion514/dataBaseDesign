@@ -1,4 +1,4 @@
-package com.edu.service.academic;
+package com.edu.service.academic_exchange;
 
 import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
 

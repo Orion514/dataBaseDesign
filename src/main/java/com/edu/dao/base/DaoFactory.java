@@ -5,6 +5,8 @@ import com.edu.dao.academic.TableNameDao;
 import com.edu.dao.academic.impl.TableNameDaoImpl;
 import com.edu.po.Paper;
 import com.edu.po.Standard;
+import com.edu.dao.assistant.*;
+import com.edu.dao.assistant.impl.*;
 
 public class DaoFactory {
     // 单例模式
@@ -20,7 +22,17 @@ public class DaoFactory {
     }
 
     // 工厂创建Dao对象
-    public TableNameDao getTableNameDao(){return new TableNameDaoImpl();}
+
+    public AssessmentDao getAssessmentDao(){return new AssessmentDaoImpl();}
+
+    public CourseDao getCourseDao(){return new CourseDaoImpl();}
+
+    public TeacherDao getTeacherDao(){return new TeacherDaoImpl();}
+
+    public CourseTeacherDao getCourseTeacherDao(){return new CourseTeacherDaoImpl();}
+
+    public StudentDao getStudentDao(){return new StudentDaoImpl();}
+
 
     // 下面可以加更多的Dao对象,如下
 //    public ScoreDao getScoreDao(){return new ScoreDaoImpl(); }
@@ -42,6 +54,7 @@ public class DaoFactory {
     public ParticipateDaoImpl getParticipateDao(){return new ParticipateDaoImpl();}
 
     public Subject_LeaderDaoImpl getSubject_LeaderDao(){return new Subject_LeaderDaoImpl();}
+    public SubjectDaoImpl getSubjectDao(){return new SubjectDaoImpl();}
     public PaperDaoImpl getPaperDao(){return new PaperDaoImpl();}
     public PrizeDaoImpl getPrizeDao(){return new PrizeDaoImpl();}
     public StandardDaoImpl getStandardDao(){return new StandardDaoImpl();}
