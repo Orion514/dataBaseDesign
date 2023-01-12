@@ -2,7 +2,7 @@ package com.edu.domain.assistant;
 
 public class Result {
     private String sno_id;
-    private int cid;
+    private String cid;
 
     public String getSno_id() {
         return sno_id;
@@ -12,11 +12,11 @@ public class Result {
         this.sno_id = sno_id;
     }
 
-    public int getCid() {
+    public String getCid() {
         return cid;
     }
 
-    public void setCid(int cid) {
+    public void setCid(String cid) {
         this.cid = cid;
     }
 }

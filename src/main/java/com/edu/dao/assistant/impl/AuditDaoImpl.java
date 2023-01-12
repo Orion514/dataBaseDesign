@@ -7,6 +7,7 @@ import com.edu.domain.assistant.Audit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class AuditDaoImpl implements AuditDao {
     @Override
@@ -127,11 +128,12 @@ public class AuditDaoImpl implements AuditDao {
     }
 
     @Override
-    public void selectAuditBySnod(String sno_id) {
+    public ArrayList<Audit> selectAuditBySnod(String sno_id) {
 
         Connection con = null;
         //查询结果返回
         ResultSet resSet = null;
+        ArrayList<Audit> list=new ArrayList<>();
         try{
             con = DruidUtil.getDataSource().getConnection();
             //con= DaoBase.getConnection();
@@ -139,6 +141,7 @@ public class AuditDaoImpl implements AuditDao {
             PreparedStatement psmt = con.prepareStatement(select_sql);
             psmt.setString(1,sno_id);
             resSet = psmt.executeQuery();
+            int num = 0;
             //迭代器，while循环
             while (resSet.next()) {
                 //函数有多种类型，根据获取的数值的类型决定
@@ -146,11 +149,19 @@ public class AuditDaoImpl implements AuditDao {
                 //id = resSet.getInt(1);
                 //String username = resSet.getString(1);
                 //String password = resSet.getString("password");
+                String id=resSet.getString("id");
                 String sno_idd=resSet.getString("sno_id");
                 String cid=resSet.getString("cid");
                 String audit_state=resSet.getString("audit_state");
                 String choice=resSet.getString("choice");
                 System.out.println("sno_id: "+sno_idd+"  cid:  "+cid+"  audit_state:  "+audit_state+"  choice:  "+choice);
+                Audit au=new Audit();
+                au.setId(Integer.parseInt(id));
+                au.setSno_id(sno_idd);
+                au.setCid(cid);
+                au.setAudit_state(audit_state);
+                au.setChoice(Integer.parseInt(choice));
+                list.add(au);
             }
             psmt.close();
         }catch(Exception e){
@@ -163,11 +174,107 @@ public class AuditDaoImpl implements AuditDao {
             }
         }
 
-
+        return list;
     }
 
-    //查看12
-    //通过。。。不通过
+    @Override
+    public ArrayList<Audit> selectAuditByCid(String cid) {
+
+        Connection con = null;
+        //查询结果返回
+        ResultSet resSet = null;
+        ArrayList<Audit> list=new ArrayList<>();
+        try{
+            con = DruidUtil.getDataSource().getConnection();
+            //con= DaoBase.getConnection();
+            String select_sql="select * from audit where cid = ?";
+            PreparedStatement psmt = con.prepareStatement(select_sql);
+            psmt.setString(1,String.valueOf(cid));
+            resSet = psmt.executeQuery();
+            //迭代器，while循环
+            while (resSet.next()) {
+                //函数有多种类型，根据获取的数值的类型决定
+                //参数有两种类型，int是根据列号获取，String是根据列名获取
+                //id = resSet.getInt(1);
+                //String username = resSet.getString(1);
+                //String password = resSet.getString("password");
+                String id=resSet.getString("id");
+                String sno_idd=resSet.getString("sno_id");
+                String cidd=resSet.getString("cid");
+                String audit_state=resSet.getString("audit_state");
+                String choice=resSet.getString("choice");
+                System.out.println("sno_id: "+sno_idd+"  cid:  "+cidd+"  audit_state:  "+audit_state+"  choice:  "+choice);
+                Audit au=new Audit();
+                au.setId(Integer.parseInt(id));
+                au.setSno_id(sno_idd);
+                au.setCid(cidd);
+                au.setAudit_state(audit_state);
+                au.setChoice(Integer.parseInt(choice));
+                list.add(au);
+            }
+            psmt.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                con.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return list;
+    }
+
+
+    @Override
+    public ArrayList<Audit> selectAuditById(int id) {
+        Connection con = null;
+        //查询结果返回
+        ResultSet resSet = null;
+        ArrayList<Audit> list=new ArrayList<>();
+        try{
+            con = DruidUtil.getDataSource().getConnection();
+            //con= DaoBase.getConnection();
+            String select_sql="select * from audit where id = ?";
+            PreparedStatement psmt = con.prepareStatement(select_sql);
+            psmt.setString(1,String.valueOf(id));
+            resSet = psmt.executeQuery();
+            //迭代器，while循环
+            while (resSet.next()) {
+                //函数有多种类型，根据获取的数值的类型决定
+                //参数有两种类型，int是根据列号获取，String是根据列名获取
+                //id = resSet.getInt(1);
+                //String username = resSet.getString(1);
+                //String password = resSet.getString("password");
+                String idd=resSet.getString("id");
+                String sno_idd=resSet.getString("sno_id");
+                String cidd=resSet.getString("cid");
+                String audit_state=resSet.getString("audit_state");
+                String choice=resSet.getString("choice");
+                System.out.println("sno_id: "+sno_idd+"  cid:  "+cidd+"  audit_state:  "+audit_state+"  choice:  "+choice);
+                Audit au=new Audit();
+                au.setId(Integer.parseInt(idd));
+                au.setSno_id(sno_idd);
+                au.setCid(cidd);
+                au.setAudit_state(audit_state);
+                au.setChoice(Integer.parseInt(choice));
+                list.add(au);
+            }
+            psmt.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                con.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return list;
+    }
+
 
 
 }
