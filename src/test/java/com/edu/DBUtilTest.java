@@ -1,6 +1,6 @@
 package com.edu;
 
-import com.edu.po.Academic_Exchange;
+import com.edu.domain.academic.Academic_Exchange;
 import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
 import com.edu.druid.DBUtil;
 import org.junit.Test;

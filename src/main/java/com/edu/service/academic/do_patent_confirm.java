@@ -1,10 +1,8 @@
 package com.edu.service.academic;
 
-import com.edu.dao.PatentDaoImpl;
-import com.edu.dao.PrizeDaoImpl;
-import com.edu.po.Patent;
-import com.edu.po.Prize;
-import com.edu.po.User;
+import com.edu.dao.achievement.impl.PatentDaoImpl;
+import com.edu.domain.achievement.Patent;
+import com.edu.domain.common.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

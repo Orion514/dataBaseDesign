@@ -1,6 +1,6 @@
 package com.edu.dao.academic_exchange;
 
-import com.edu.po.Academic_Exchange;
+import com.edu.domain.academic.Academic_Exchange;
 
 import java.util.List;
 

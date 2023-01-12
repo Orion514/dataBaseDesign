@@ -1,12 +1,11 @@
 package com.edu.dao.base;
 
-import com.edu.dao.*;
-import com.edu.dao.academic.TableNameDao;
-import com.edu.dao.academic.impl.TableNameDaoImpl;
-import com.edu.po.Paper;
-import com.edu.po.Standard;
+import com.edu.dao.achievement.impl.*;
 import com.edu.dao.assistant.*;
 import com.edu.dao.assistant.impl.*;
+import com.edu.dao.common.impl.*;
+import com.edu.dao.project.impl.ParticipateDaoImpl;
+import com.edu.dao.project.impl.ProjectDaoImpl;
 
 public class DaoFactory {
     // 单例模式
@@ -32,6 +31,8 @@ public class DaoFactory {
     public CourseTeacherDao getCourseTeacherDao(){return new CourseTeacherDaoImpl();}
 
     public StudentDao getStudentDao(){return new StudentDaoImpl();}
+
+    public AuditDao getAuditDao(){return new AuditDaoImpl();}
 
 
     // 下面可以加更多的Dao对象,如下

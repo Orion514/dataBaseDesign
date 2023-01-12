@@ -6,9 +6,12 @@ import java.sql.Date;
  * AssessmentAll : 助教评定表（视图）
  */
 public class AssessmentView {
-    private String student_name;
     private String student_id;
+    private String student_name;
+
+    private String course_id;
     private String course_name;
+    private int course_teacher_id;
     private int course_student_num;
     private String subject_name;
     private String course_property;
@@ -24,13 +27,16 @@ public class AssessmentView {
     public AssessmentView() {
     }
 
-    public AssessmentView(String student_name, String student_id, String course_name, int course_student_num,
-                         String subject_name, String course_property, String course_object, String teacher_name,
-                         String teach_time, String work_statement, Date statement_time, String appraise,
-                         Date appraise_time, String appraise_result) {
-        this.student_name = student_name;
+    public AssessmentView(String student_id, String student_name, String course_id, String course_name,
+                          int course_teacher_id, int course_student_num, String subject_name,
+                          String course_property, String course_object, String teacher_name,
+                          String teach_time, String work_statement, Date statement_time,
+                          String appraise, Date appraise_time, String appraise_result) {
         this.student_id = student_id;
+        this.student_name = student_name;
+        this.course_id = course_id;
         this.course_name = course_name;
+        this.course_teacher_id = course_teacher_id;
         this.course_student_num = course_student_num;
         this.subject_name = subject_name;
         this.course_property = course_property;
@@ -44,13 +50,16 @@ public class AssessmentView {
         this.appraise_result = appraise_result;
     }
 
+
     @Override
     public String toString() {
         return "AssessmentView{" +
-                "student_name='" + student_name + '\'' +
-                ", student_id='" + student_id + '\'' +
+                "student_id='" + student_id + '\'' +
+                ", student_name='" + student_name + '\'' +
+                ", course_id='" + course_id + '\'' +
                 ", course_name='" + course_name + '\'' +
-                ", course_student_num='" + course_student_num + '\'' +
+                ", course_teacher_id=" + course_teacher_id +
+                ", course_student_num=" + course_student_num +
                 ", subject_name='" + subject_name + '\'' +
                 ", course_property='" + course_property + '\'' +
                 ", course_object='" + course_object + '\'' +
@@ -62,6 +71,22 @@ public class AssessmentView {
                 ", appraise_time=" + appraise_time +
                 ", appraise_result='" + appraise_result + '\'' +
                 '}';
+    }
+
+    public String getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(String course_id) {
+        this.course_id = course_id;
+    }
+
+    public int getCourse_teacher_id() {
+        return course_teacher_id;
+    }
+
+    public void setCourse_teacher_id(int course_teacher_id) {
+        this.course_teacher_id = course_teacher_id;
     }
 
     public String getStudent_name() {

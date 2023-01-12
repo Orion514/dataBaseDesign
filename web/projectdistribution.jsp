@@ -5,6 +5,11 @@
 <%@ page import="com.edu.dao.base.DaoFactory" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.edu.po.*" %>
+<%@ page import="com.edu.domain.project.Participate" %>
+<%@ page import="com.edu.domain.project.Project" %>
+<%@ page import="com.edu.domain.common.Postgraduate" %>
+<%@ page import="com.edu.domain.common.Tutor" %>
+<%@ page import="com.edu.domain.common.User" %>
 <html>
 <head>
     <title>导师指定项目给学生</title>

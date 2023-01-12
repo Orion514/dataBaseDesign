@@ -1,8 +1,8 @@
 package com.edu.service.academic;
 
-import com.edu.dao.PaperDaoImpl;
-import com.edu.po.Paper;
-import com.edu.po.User;
+import com.edu.dao.achievement.impl.PaperDaoImpl;
+import com.edu.domain.achievement.Paper;
+import com.edu.domain.common.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -61,6 +61,7 @@ public class AssessmentDaoImpl extends DaoBase implements AssessmentDao {
             while(rs.next()){
                 AssessmentView assessmentView = new AssessmentView();
                 assessmentView.setStudent_id(rs.getString("sno"));
+                assessmentView.setCourse_id(rs.getString("course_id"));
                 assessmentView.setStudent_name(rs.getString("sname"));
                 assessmentView.setCourse_name(rs.getString("course_name"));
                 assessmentView.setCourse_student_num(rs.getInt("teach_student_num"));
@@ -83,5 +84,45 @@ public class AssessmentDaoImpl extends DaoBase implements AssessmentDao {
             release(null,psmt,conn);
         }
         return res;
+    }
+
+
+    private static final String Assessment_SELECT_BY_ID = "select * from view_assessment where id = ? ";
+    @Override
+    public AssessmentView selectById(int id) {
+        Connection conn = null;
+        PreparedStatement psmt = null;
+        ResultSet rs = null;
+        AssessmentView assessmentView = new AssessmentView();
+
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(Assessment_SELECT_BY_ID);
+            psmt.setInt(1,id);
+
+            rs = psmt.executeQuery();
+            if(rs.next()){
+                assessmentView.setStudent_id(rs.getString("sno"));
+                assessmentView.setStudent_name(rs.getString("sname"));
+                assessmentView.setCourse_name(rs.getString("course_name"));
+                assessmentView.setCourse_student_num(rs.getInt("teach_student_num"));
+                assessmentView.setSubject_name(rs.getString("sub_name"));
+                assessmentView.setCourse_property(rs.getString("course_property"));
+                assessmentView.setCourse_object(rs.getString("course_teach_object"));
+                assessmentView.setTeacher_name(rs.getString("teacher_name"));
+                assessmentView.setTeach_time(rs.getString("teach_time"));
+                assessmentView.setWork_statement(rs.getString("work_statement"));
+                assessmentView.setStatement_time(rs.getDate("statement_time"));
+                assessmentView.setAppraise(rs.getString("teacher_appraise"));
+                assessmentView.setAppraise_time(rs.getDate("appraise_time"));
+                assessmentView.setAppraise_result(rs.getString("appraise_result"));
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            release(null,psmt,conn);
+        }
+        return assessmentView;
     }
 }
