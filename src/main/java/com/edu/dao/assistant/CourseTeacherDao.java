@@ -11,4 +11,7 @@ public interface CourseTeacherDao {
     public List<CourseTeacherView> getCourseTeacherAll();
 
     public CourseTeacherView selectViewById(int id);
+
+    public List<Integer> selectTeacherCourseIdbyTid(String tid);
+
 }

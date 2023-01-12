@@ -33,5 +33,12 @@
 <form action="assistant_stu_1.jsp">
     <input type="submit" value="进入助教志愿选择系统">
 </form>
+
+<form method="post" action="choice_result">
+    <input type="submit" value="查看志愿选择结果">
+</form>
+<form method="post" action="assistant_result">
+    <input type="submit" value="查看助教评定结果">
+</form>
 </body>
 </html>

@@ -126,4 +126,29 @@ public class CourseTeacherDaoImpl extends DaoBase implements CourseTeacherDao {
         }
         return courseTeacherView;
     }
+
+    private static final String selectTeacherCourseIdbyTid = "select id from course_teacher where teachar_id = ? ";
+    @Override
+    public List<Integer> selectTeacherCourseIdbyTid(String tid) {
+        List<Integer> res = new ArrayList<>();
+
+        Connection conn = null;
+        PreparedStatement psmt = null;
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(selectTeacherCourseIdbyTid);
+            psmt.setString(1,tid);
+
+            ResultSet rs = psmt.executeQuery();
+            while(rs.next()){
+                String id=rs.getString("id");
+                res.add(Integer.parseInt(id));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return res;
+    }
+
 }

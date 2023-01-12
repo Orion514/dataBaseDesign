@@ -9,7 +9,10 @@ import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -125,4 +128,131 @@ public class AssessmentDaoImpl extends DaoBase implements AssessmentDao {
         }
         return assessmentView;
     }
+
+    public java.sql.Date strToDate(String stringDate) throws ParseException
+    {
+
+        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("string:"+stringDate);
+
+        Date stDate=sdf.parse(stringDate);                 //这里的Date是java.util.Date这个包里的
+        System.out.println("util.Date:"+stDate);
+
+        java.sql.Date startDate=new java.sql.Date(stDate.getTime());
+        System.out.println("sql.Date:"+startDate);
+        return startDate;
+    }
+
+
+
+    private static final String Assessment_SELECT_BY_Course_Teacher_Id = "select * from assistant_assessment where course_teacher_id = ? ";
+    @Override
+    public List<Assessment> selectBy_Course_Teacher_Id(int course_teacher_id) {
+        Connection conn = null;
+        PreparedStatement psmt = null;
+        ResultSet rs = null;
+        List<Assessment> res = new ArrayList<>();
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(Assessment_SELECT_BY_Course_Teacher_Id);
+            psmt.setString(1,String.valueOf(course_teacher_id));
+            rs = psmt.executeQuery();
+
+            while(rs.next()){
+                Assessment assessment=new Assessment();
+                assessment.setSno_id(rs.getString("sno_id"));
+                assessment.setCourse_teacher_id(Integer.parseInt(rs.getString("course_teacher_id")));;
+                assessment.setWork_statement(rs.getString("work_statement"));
+
+                String dd= rs.getString("statement_time");
+                assessment.setStatement_time(strToDate(dd));
+
+                if(rs.getString("appraise_result")!=null)
+                {
+                    assessment.setTeachar_appraise(rs.getString("teacher_appraise"));
+                    String dd2= rs.getString("appraise_time");
+                    assessment.setAppraise_time(strToDate(dd2));
+                    assessment.setAppraise_result(rs.getString("appraise_result"));
+                }
+                res.add(assessment);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            release(null,psmt,conn);
+        }
+        return res;
+    }
+
+
+
+    private static final String Assessment_SELECT_BY_Sno_Id = "select * from assistant_assessment where sno_id = ? ";
+    @Override
+    public List<Assessment> Assessment_SELECT_BY_Sno_Id(String sno_id) {
+        Connection conn = null;
+        PreparedStatement psmt = null;
+        ResultSet rs = null;
+        List<Assessment> res = new ArrayList<>();
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(Assessment_SELECT_BY_Sno_Id);
+            psmt.setString(1,String.valueOf(sno_id));
+            rs = psmt.executeQuery();
+
+            while(rs.next()){
+                Assessment assessment=new Assessment();
+                assessment.setSno_id(rs.getString("sno_id"));
+                assessment.setCourse_teacher_id(Integer.parseInt(rs.getString("course_teacher_id")));;
+                assessment.setWork_statement(rs.getString("work_statement"));
+
+                String dd= rs.getString("statement_time");
+                assessment.setStatement_time(strToDate(dd));
+                if(rs.getString("appraise_result")!=null)
+                {
+                    assessment.setTeachar_appraise(rs.getString("teacher_appraise"));
+                    String dd2= rs.getString("appraise_time");
+                    assessment.setAppraise_time(strToDate(dd2));
+                    assessment.setAppraise_result(rs.getString("appraise_result"));
+                }
+                res.add(assessment);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            release(null,psmt,conn);
+        }
+        return res;
+    }
+
+
+
+
+
+    private static final String Assessment_UPDATE_BY_Course_Teacher_SNO_Id = "update assistant_assessment set teacher_appraise =? , appraise_time = ? , appraise_result= ?  where sno_id = ? and course_teacher_id = ? ";
+    @Override
+    public void updateBy_Course_Teacher_Sno_Id(String teacher_appraise,Date appraise_time,String appraise_result,String sno_id,int course_teacher_id) {
+        Connection conn = null;
+        PreparedStatement psmt = null;
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(Assessment_UPDATE_BY_Course_Teacher_SNO_Id);
+            psmt.setString(1,teacher_appraise);
+            psmt.setDate(2, (java.sql.Date) appraise_time);
+            psmt.setString(3,appraise_result);
+            psmt.setString(4,sno_id);
+            psmt.setInt(5,course_teacher_id);
+            psmt.executeUpdate();
+            System.out.println("更新完毕");
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            release(null,psmt,conn);
+        }
+    }
+
+
+
 }
