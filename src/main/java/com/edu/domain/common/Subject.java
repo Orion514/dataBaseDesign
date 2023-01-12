@@ -7,6 +7,17 @@ public class Subject {
     private int academic_exchange_count;
     private int aspiration_count;
 
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", project_funds='" + project_funds + '\'' +
+                ", academic_exchange_count=" + academic_exchange_count +
+                ", aspiration_count=" + aspiration_count +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

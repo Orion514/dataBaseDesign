@@ -1,6 +1,6 @@
 package com.edu.service.academic_exchange;
 
-import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
+import com.edu.dao.academic_exchange.impl.Academic_ExchangeDaoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/Academic_Exchange_Audit")

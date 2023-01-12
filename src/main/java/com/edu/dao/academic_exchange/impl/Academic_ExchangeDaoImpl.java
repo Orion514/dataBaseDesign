@@ -1,5 +1,6 @@
-package com.edu.dao.academic_exchange;
+package com.edu.dao.academic_exchange.impl;
 
+import com.edu.dao.academic_exchange.Academic_ExchangeDao;
 import com.edu.domain.academic.Academic_Exchange;
 import com.edu.dao.base.DaoBase;
 

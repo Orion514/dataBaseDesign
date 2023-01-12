@@ -5,4 +5,6 @@ package com.edu.dao.assistant;
  */
 public interface StudentDao {
     public String getSubIdBySno(String sno);
+
+    public String getSubNameBySno(String sno);
 }

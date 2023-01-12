@@ -33,5 +33,9 @@
 <form action="assistant_stu_1.jsp">
     <input type="submit" value="进入助教志愿选择系统">
 </form>
+
+<form action="assistant_stu_assessment.jsp">
+    <input type="submit" value="填写助教评定表">
+</form>
 </body>
 </html>

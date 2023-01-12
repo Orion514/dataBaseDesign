@@ -3,11 +3,13 @@ package com.edu.dao.common.impl;
 import com.edu.domain.common.Subject;
 import com.edu.dao.common.SubjectDao;
 import com.edu.dao.base.DaoBase;
+import org.w3c.dom.ls.LSException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectDaoImpl extends DaoBase implements SubjectDao {
@@ -55,7 +57,32 @@ public class SubjectDaoImpl extends DaoBase implements SubjectDao {
 
     @Override
     public List<Subject> selectallSubject() {
-        return null;
+        List<Subject> res = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement psmt = null;
+        ResultSet rs = null;
+
+        try{
+            conn = getConnection();
+            psmt = conn.prepareStatement(select_sql1);
+            rs = psmt.executeQuery();
+
+            while(rs.next()){
+                Subject subject = new Subject();
+                subject.setId(rs.getString("id"));
+                subject.setName(rs.getString("name"));
+                subject.setProject_funds(rs.getString("project_funds"));
+                subject.setAspiration_count(rs.getInt("aspiration_count"));
+                subject.setAcademic_exchange_count(rs.getInt("academic_exchange_count"));
+
+                res.add(subject);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            release(null,psmt,conn);
+        }
+        return res;
     }
 
     @Override

@@ -15,6 +15,7 @@
 <%@ page import="com.edu.domain.common.Postgraduate" %>
 <%@ page import="com.edu.domain.common.Tutor" %>
 <%@ page import="com.edu.domain.common.User" %>
+<%@ page import="com.edu.dao.academic_exchange.impl.Academic_ExchangeDaoImpl" %>
 <html>
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

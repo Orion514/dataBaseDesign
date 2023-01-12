@@ -3,7 +3,7 @@ package com.edu.service.academic_exchange;
 import com.edu.dao.common.impl.PostgraduateDaoImpl;
 import com.edu.dao.base.DaoFactory;
 import com.edu.domain.academic.Academic_Exchange;
-import com.edu.dao.academic_exchange.Academic_ExchangeDaoImpl;
+import com.edu.dao.academic_exchange.impl.Academic_ExchangeDaoImpl;
 import com.edu.domain.common.Postgraduate;
 import com.edu.domain.common.Subject_Leader;
 import com.edu.domain.common.Tutor;

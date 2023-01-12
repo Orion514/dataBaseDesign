@@ -17,6 +17,7 @@
 <%@ page import="com.edu.domain.common.Subject" %>
 <%@ page import="com.edu.domain.common.Subject_Leader" %>
 <%@ page import="com.edu.domain.common.User" %>
+<%@ page import="com.edu.dao.academic_exchange.impl.Academic_ExchangeDaoImpl" %>
 <html>
   <head>
     <title>研究生学术交流情况认定</title>
