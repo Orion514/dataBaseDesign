@@ -64,7 +64,7 @@ public class CourseTeacherDaoImpl extends DaoBase implements CourseTeacherDao {
     }
 
 
-    private static final String selectCourseTeacherView = "select * from view_course_teacher";
+    private static final String selectCourseTeacherView = "select * from view_course_teacher order by (teach_student_num * 4 + course_hour * 6) desc ";
 
     @Override
     public List<CourseTeacherView> getCourseTeacherAll() {
