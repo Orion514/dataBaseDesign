@@ -54,7 +54,7 @@ public class AssessmentServiceImpl extends HttpServlet implements AssessmentServ
         String stu_id = request.getParameter("stu_id");
         String stu_name = request.getParameter("stu_name");
         String stu_sub_name = request.getParameter("stu_subject_name");
-//        String stu_sub_name = studentDao.getSubNameBySno(stu_id);
+    //        String stu_sub_name = studentDao.getSubNameBySno(stu_id);
         String course_name = request.getParameter("course_name");
         String course_property = request.getParameter("course_property");
         String course_object = request.getParameter("course_object");

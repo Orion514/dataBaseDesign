@@ -19,10 +19,6 @@ out.println("<table border=\"1\" align='center'>\r\n"+
 		);
 for(int i=0;i<(Integer)session.getAttribute("result_num");i++)
 {
-	//String result_sno_id=(String)session.getAttribute(String.valueOf(i)+"result_sno_id");
-	//String result_cid=(String)session.getAttribute(String.valueOf(i)+"result_cid");
-
-
 	for(int j=0;j<(Integer)session.getAttribute(String.valueOf(i)+"result_num");j++)
 	{
 		String result_sno_id=(String)session.getAttribute(String.valueOf(i)+String.valueOf(j)+"result_sno_id");
@@ -37,17 +33,8 @@ for(int i=0;i<(Integer)session.getAttribute("result_num");i++)
 
 		out.println(" <tr>"+"<td>"+result_sno_id+"</td>\r\n" + "<td>"+result_sname+"</td>\r\n"+"<td>"+result_course_id+"</td>\r\n"+"<td>"+result_course_name+"</td>\r\n"+"<td>"+teach_student_num+"</td>\r\n"+"<td>"+result_sub_name+"</td>\r\n"+"<td>"+result_course_property+"</td>\r\n"+"<td>"+result_course_teach_object+"</td>\r\n"+"<td>"+result_teacher_name+"</td>\r\n"+"</tr>\r\n");
 	}
-
-	//out.println("<font color=\"Green\">订单号：  "+order_id+"商品号：  "+product_id+"用户id:  "+user_id+"下单时间:  "+time+"</font>"+"<br/>");
-	/*out.println(
-			" <tr><th>订单号</th>\r\n" + "<td>"+order_id+"</td>\r\n"+"</tr>\r\n"+
-			" <tr><th>商品号</th>\r\n" + "<td>"+product_id+"</td>\r\n"+"</tr>\r\n"+
-			"<tr><th>用户id</th>\r\n" + "<td>"+user_id+"</td>\r\n"+"</tr>\r\n"+
-			"<tr><th>时间</th>\r\n" + "<td>"+time+"</td>\r\n"+"</tr>\r\n");*/
 }
-
 	out.println("</table>");
-
 %>
 
 </body>

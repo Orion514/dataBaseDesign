@@ -46,30 +46,14 @@ public class choice_result extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-
-
 		User u=(User)request.getSession().getAttribute("userbean");
-
 		Postgraduate pos=DaoFactory.getInstance().getPostgraduateDao().selectPostgraduateByUserId(u.getId());
-
 
 		Result re =new Result();
 		re.setSno_id(pos.getId());
 		ArrayList<Result> list=new ArrayList<>();
 		list=DaoFactory.getInstance().getResultDao().selectResult(re);
 		request.getSession().setAttribute("result_num",list.size());
-//
-//		for(int i=0;i<list.size();i++)
-//	    {
-//	       System.out.println(list.get(i).getSno_id()+"   "+list.get(i).getCid());
-//		   request.getSession().setAttribute(String.valueOf(i)+"result_sno_id",list.get(i).getSno_id());
-//		   request.getSession().setAttribute(String.valueOf(i)+"result_cid",list.get(i).getCid());
-//
-//	    }
-
-
 
 		for(int i=0;i<list.size();i++)
 		{
@@ -82,30 +66,17 @@ public class choice_result extends HttpServlet {
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_sname",String.valueOf(li.get(j).getStudent_name()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_course_id",String.valueOf(list.get(i).getCid()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_course_name",String.valueOf(li.get(j).getCourse_name()));
-
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"teach_student_num",String.valueOf(li.get(j).getCourse_student_num()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_sub_name",String.valueOf(li.get(j).getSubject_name()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_course_property",String.valueOf(li.get(j).getCourse_property()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_course_teach_object",String.valueOf(li.get(j).getCourse_object()));
 				request.getSession().setAttribute(String.valueOf(i)+String.valueOf(j)+"result_teacher_name",String.valueOf(li.get(j).getTeacher_name()));
-
-
 			}
-
 		}
-
-
-
-
 		String forwardUrl="choice_result.jsp";
 		RequestDispatcher dispatcher =
 				request.getRequestDispatcher(forwardUrl);
 		dispatcher.forward(request, response);
-
-
-
-
-
 	}
 
 }

@@ -68,10 +68,7 @@ public class assistant_result extends HttpServlet {
 		String forwardUrl="assistant_result.jsp";
 		RequestDispatcher dispatcher =
 				request.getRequestDispatcher(forwardUrl);
-				dispatcher.forward(request, response);	
-		   
-	    
-		
+				dispatcher.forward(request, response);
 	}
 
 }
