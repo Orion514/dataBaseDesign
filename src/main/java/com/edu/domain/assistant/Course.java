@@ -4,17 +4,17 @@ package com.edu.domain.assistant;
  * Course : 课程表
  */
 public class Course {
-    public int cid;
+    public String cid;
     public String name;
     public String property;
     public String teach_object;
-    public int subject_id;
+    public String subject_id;
     public int hour;
 
     public Course() {
     }
 
-    public Course(int cid, String name, String property, String teach_object, int subject_id, int hour) {
+    public Course(String cid, String name, String property, String teach_object, String subject_id, int hour) {
         this.cid = cid;
         this.name = name;
         this.property = property;
@@ -35,11 +35,11 @@ public class Course {
                 '}';
     }
 
-    public int getCid() {
+    public String getCid() {
         return cid;
     }
 
-    public void setCid(int cid) {
+    public void setCid(String cid) {
         this.cid = cid;
     }
 
@@ -67,11 +67,11 @@ public class Course {
         this.teach_object = teach_object;
     }
 
-    public int getSubject_id() {
+    public String getSubject_id() {
         return subject_id;
     }
 
-    public void setSubject_id(int subject_id) {
+    public void setSubject_id(String subject_id) {
         this.subject_id = subject_id;
     }
 
