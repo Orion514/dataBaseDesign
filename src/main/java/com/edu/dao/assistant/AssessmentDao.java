@@ -24,5 +24,7 @@ public interface AssessmentDao {
     //根据学号选出评定表
     public List<Assessment> Assessment_SELECT_BY_Sno_Id(String sno_id);
 
+    //根据学号，课程号选出评定表
+    public List<AssessmentView> selectBySnoCID(String sno, String course_id);
 
 }
