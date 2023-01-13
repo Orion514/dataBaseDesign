@@ -10,7 +10,7 @@
 
 
 <p align="center">
-<H1><font color="black">助教评定结果如下</font></H1>
+<H1><font color="black">助教评定结果如下</font></H1> </p>
 
 <%
 

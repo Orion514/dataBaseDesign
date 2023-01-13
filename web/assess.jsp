@@ -9,8 +9,7 @@
 <body>
 
 
-<p align="center">
-<H1><font color="black">助教评定信息如下</font></H1>
+<H1 align="center" ><font color="black">助教评定信息如下</font></H1>
 
 <%
 

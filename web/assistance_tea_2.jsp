@@ -8,9 +8,8 @@
 </head>
 <body>
 
-<p align="center">
-<H1><font color="black">第二志愿信息如下</font></H1>
 
+<H1 align="center"><font color="black">第二志愿信息如下</font></H1>
 
 
 <%

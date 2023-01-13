@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<p align="center">
-<H1><font color="black">Welcome to Course_Teacher</font></H1>
+
+<H1 align="center"><font color="black">欢迎进入授课教师界面</font></H1>
 
 <form action="Audit.jsp">
 <p align="center">

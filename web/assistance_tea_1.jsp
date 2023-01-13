@@ -12,8 +12,8 @@
 <p align="center">
 <a HREF="assistance_tea_2.jsp">第二志愿审核</a> </p> 
 
-<p align="center">
-<H1><font color="black">第一志愿信息如下</font></H1>
+
+<H1 align="center"><font color="black">第一志愿信息如下</font></H1>
 
 <%
 

@@ -8,8 +8,9 @@
 </head>
 <body>
 
-<p align="center">
-<H1><font color="black">Welcome to Assessment</font></H1>
+<% response.setContentType("text/html;charset=utf-8"); %>
+
+<H1 align="center"><font color="black">Welcome to Assessment</font></H1>
 
 <form method="post" action="GetAssessment">
 

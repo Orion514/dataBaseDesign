@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<p align="center">
-<H1><font align="center" color="black">Welcome to Audit</font></H1>
+<% request.setCharacterEncoding("utf-8"); %>
+<% response.setContentType("text/html;charset=utf-8"); %>
+
+<H1 align="center"><font align="center" color="black">审核页面</font></H1>
 
 <form method="post" action="GetAudit">
 
