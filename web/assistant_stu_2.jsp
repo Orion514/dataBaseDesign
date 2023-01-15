@@ -23,6 +23,7 @@
     <tr align="center">
         <th>序号</th>
         <th>课程名</th>
+        <th>课程编号</th>
         <th>课程性质</th>
         <th>课程时长</th>
         <th>授课对象</th>
@@ -38,6 +39,7 @@
         for(CourseTeacherView l:list){
             s+="<tr align=\"center\">";
             s+="<td>"+l.getId()+"</td>";
+            s+="<td>"+l.getCourse_id()+"</td>";
             s+="<td>"+l.getCourse_name()+"</td>";
             s+="<td>"+l.getCourse_property()+"</td>";
             s+="<td>"+l.getCourse_hour()+"</td>";
